@@ -1,2 +1,2 @@
 #!/bin/bash
-puts("Programming is like building a multilingual puzzle")
+gcc -save-temps 4-puts.c -o 4-puts
