@@ -6,7 +6,9 @@
 /**
 *main -A program to print  th€  last digit of a number
 *
-*Return: 0(Successs)
+*Return: 0(Success)
+*/
+
 int main(void)
 {
 int n;
