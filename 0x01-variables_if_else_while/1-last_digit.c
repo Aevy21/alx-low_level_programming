@@ -1,34 +1,32 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
-*main -A program to print  th€  last digit of a number
+* main - Prints a text according number
 *
-*Return: 0(Success)
+* Return: Always (Success)
 */
-
 int main(void)
-{
-int n;
-int c;
+int n, lastd;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-c = n % 10;
-if (c > 5)
+lastd = n % 10;
+
+if (lastd > 5)
 {
-printf("Last digit of %d is %d and is greater than 5\n", n, c);
+printf("Last digit of %d is %d and is greater than 5\n", n, lastd);
 }
-else if (c < 6 && c != 0)
+else if (lastd == 0)
 {
-printf("Last digit of %d is %d and is lessthan 6 and not 0\n", n, c);
+printf("Last digit of %d is %d and is 0\n", n, lastd);
 }
-else if (c == 0)
+else if (lastd < 6 && lastd != 0)
 {
-printf("Last digit of %d is %d and is 0\n", n, c);
+printf("Last digit of %d is %d and is less than 6 and not 0\n", n, lastd);
 }
+
 return (0);
 }
 
