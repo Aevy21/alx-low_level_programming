@@ -16,7 +16,6 @@ for (k = j + 1; k <= '9'; k++)
 putchar(i);
 putchar(j);
 putchar(k);
-
 if (i < '7' || j < '8' || k < '9')
 {
 putchar(',');
