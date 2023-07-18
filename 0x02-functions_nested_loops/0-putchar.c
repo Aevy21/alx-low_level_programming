@@ -1,18 +1,17 @@
-#include <stdio.h>
 #include <unistd.h>
+
 /**
 * main - Entry point
 *
-* Return: Alway 0 (Sucess)
+* Return: Always 0 (Success)
 */
-
 int main(void)
 {
 char *p = "_putchar\n";
 
 while (*p)
 {
-putchar(*p);
+write(1, p, 1);
 p++;
 }
 return (0);
