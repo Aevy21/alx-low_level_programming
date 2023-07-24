@@ -17,7 +17,7 @@ length++;
 s++;
 }
 s--;
- for (O = length; O > 0; O--)
+for (O = length; O > 0; O--)
 {
 _putchar(*s);
 s--;
