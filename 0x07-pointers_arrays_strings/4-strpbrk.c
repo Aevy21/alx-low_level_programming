@@ -7,21 +7,20 @@
 * Returns:a pointer to the byte in 's' otherwise NULL is returned.
 */
 
-
 char *_strpbrk(char *s, char *accept)
-
 {
 int i, j;
+
 for (i = 0; s[i] != '\0'; i++)
 {
-for (j = 0; accept[j] != '\0' && s[i] != accept[j]; j++)
+for (j = 0; accept[j] != '\0'; j++)
 {
-j++;
-}
-if (accept[j] != '\0')
+if (s[i] == accept[j])
 {
 return (s + i);
 }
 }
-return (s);
+}
+
+return (0);
 }
