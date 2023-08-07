@@ -17,7 +17,7 @@ s = (char *)malloc(strlen(str) + 1);
 
 if (s == NULL)
 return (NULL);
-s = _strdup(str);
+strcpy(s, str);
 return (s);
 
 free(s);
