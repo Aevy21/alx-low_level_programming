@@ -14,7 +14,8 @@ char *_strdup(char *str)
 {
 char *s;
 s = (char *)malloc(strlen(str) + 1);
-
+if (str == 0)
+return (NULL);
 if (s == NULL)
 return (NULL);
 strcpy(s, str);
