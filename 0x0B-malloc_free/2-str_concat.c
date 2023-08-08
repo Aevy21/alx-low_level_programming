@@ -24,13 +24,15 @@ if (s == NULL)
 {
 return (NULL);
 }
-if (s1 == NULL || s2 == NULL || *s1 == '\0' || *s2 == '\0')
+if (s1 == NULL)
 {
-return (NULL);
+s1 = "";
 }
-
+if (s2 == NULL)
+{
+s2 = "";
+}
 for (; i < s1_length; i++)
-
 {
 s[i] = s1[i];
 }
