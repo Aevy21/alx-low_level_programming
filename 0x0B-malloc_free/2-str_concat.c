@@ -24,11 +24,11 @@ if (s == NULL)
 {
 return (NULL);
 }
-if (s1 == NULL)
+if (s1 == NULL || s1[0] == '\0')
 {
 s1 = "";
 }
-if (s2 == NULL)
+if (s2 == NULL || s2[0] =='\0')
 {
 s2 = "";
 }
