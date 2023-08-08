@@ -20,27 +20,19 @@ int size = s1_length + s2_length + 1;
 int i = 0;
 int j = 0;
 char *s = malloc(size * sizeof(char));
-if (s == NULL)
+if (s1 != NULL)
 {
-return (NULL);
-}
-if (s1 == NULL || s1[0] == '\0')
-{
-s1 = "";
-}
-if (s2 == NULL || s2[0] =='\0')
-{
-s2 = "";
-}
 for (; i < s1_length; i++)
 {
 s[i] = s1[i];
 }
+if (s2 != NULL)
+{
 for (; j < s2_length; j++)
 {
 s[i++] = s2[j];
 }
-s[size + 1] = '\0';
-
+}
+}
 return (s);
 }
