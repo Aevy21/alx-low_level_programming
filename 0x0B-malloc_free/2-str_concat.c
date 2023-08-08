@@ -21,7 +21,10 @@ int size = s1_length + s2_length + 1;
 int i = 0;
 int j = 0;
 char *s = malloc(size * sizeof(char));
-
+if (s1_length == 0 && s2_length == 0)
+{
+return NULL;
+}
 if (s == NULL)
 {
 return (NULL);
