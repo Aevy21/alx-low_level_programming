@@ -25,11 +25,13 @@ if (s == NULL)
 {
 return (NULL);
 }
-if (s1 == NULL) s1 = "";
-if (s2 == NULL) s2 = "";
+ 
 if (s1 == NULL || s2 == NULL)
 {
 return (NULL);
+if (s1 = 0) || (s2 = 0)
+{
+s1 = NULL = s2
 }
 for (; i < len_s1; ++i)
 {
