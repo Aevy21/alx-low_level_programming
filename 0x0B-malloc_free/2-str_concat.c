@@ -25,7 +25,18 @@ if (s == NULL)
 {
 return (NULL);
 }
+<<<<<<< HEAD
  
+=======
+if (s1 == NULL)
+{
+s1 = "";
+}
+if (s2 == NULL)
+{
+s2 = "";
+}
+>>>>>>> 126a11907a021ef27c96a295ec2ecce824ce553f
 if (s1 == NULL || s2 == NULL)
 {
 return (NULL);
