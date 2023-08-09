@@ -20,7 +20,7 @@ int len_s1 = strlen(s1);
 int len_s2 = strlen(s2);
 int size =  1 + len_s2 + len_s1;
 
-char *s = (char *)malloc(size + 1 * sizeof(char));
+char *s = (char *)malloc(size * sizeof(char));
 if (s == NULL)
 {
 return (NULL);
