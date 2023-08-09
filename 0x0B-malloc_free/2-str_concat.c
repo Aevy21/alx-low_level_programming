@@ -25,25 +25,17 @@ if (s == NULL)
 {
 return (NULL);
 }
-<<<<<<< HEAD
- 
-=======
 if (s1 == NULL)
 {
-s1 = "";
+s1 = NULL;
 }
 if (s2 == NULL)
 {
-s2 = "";
+s2 = NULL;
 }
->>>>>>> 126a11907a021ef27c96a295ec2ecce824ce553f
 if (s1 == NULL || s2 == NULL)
 {
 return (NULL);
-if (s1 = 0) || (s2 = 0)
-{
-s1 = NULL = s2
-}
 for (; i < len_s1; ++i)
 {
 s[i] = s1[i];
@@ -51,6 +43,7 @@ s[i] = s1[i];
 for (; j < len_s2; ++j, ++i)
 {
 s[i] = s2[j];
+}
 }
 
 s[i] = '\0';
