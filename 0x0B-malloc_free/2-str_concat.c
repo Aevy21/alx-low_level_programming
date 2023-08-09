@@ -7,8 +7,7 @@
  *str_concat- Combines two strings into a  *new dynamically allocated buffer.
  * @s1: The first input string.
  * @s2: The second input string.
- *
- * Return: A dynamically allocated buffer 
+ * Return: A dynamically allocated buffer
  *containing the combined string,
  *or NULL if memory allocation fails.
  */
@@ -19,32 +18,26 @@ int j = 0;
 int i = 0;
 int len_s1 = strlen(s1);
 int len_s2 = strlen(s2);
-int size =  1 + len_s2+ len_s1;
- 
+int size =  1 + len_s2 + len_s1;
+
 char *s = (char *)malloc(size + 1 * sizeof(char));
-    if (s == NULL)
-    {
-	 return (NULL);
-    }
+if (s == NULL)
+{
+return (NULL);
+}
+if (s1 == NULL || s2 == NULL)
+{
+return (NULL);
+}
+for (; i < len_s1; ++i)
+{
+s[i] = s1[i];
+}
+for (; j < len_s2; ++j, ++i)
+{
+s[i] = s2[j];
+}
 
-    if (s1 == NULL || s1 == 0)
-      {
-	return (NULL);
-      }
-    if (s2 == NULL || s2 == 0)
-      {
-	return (NULL);
-
-      }
-    for (; i < len_s1; ++i)
-      {
-        s[i] = s1[i];
-    }
-    for (; j < len_s2; ++j, ++i)
-      {
-        s[i] = s2[j];
-    }
-
-    s[i] = '\0';
-    return (s);
+s[i] = '\0';
+return (s);
 }
