@@ -43,10 +43,7 @@ for (; i < len_s1; ++i)
 {
 s[i] = s1[i];
 }
-if (s1[i] == NULL)
-{
-return (NULL);
-}
+
 for (; j < len_s2; ++j, ++i)
 {
 s[i] = s2[j];
