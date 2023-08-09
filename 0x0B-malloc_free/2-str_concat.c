@@ -25,7 +25,7 @@ if (s == NULL)
 {
 return (NULL);
 }
- 
+
 if (s1 == NULL)
 {
 s1 = "";
@@ -34,7 +34,6 @@ if (s2 == NULL)
 {
 s2 = "";
 }
- 
 if (s1 == NULL || s2 == NULL)
 {
 return (NULL);
@@ -44,11 +43,14 @@ for (; i < len_s1; ++i)
 {
 s[i] = s1[i];
 }
+if (s1[i] == NULL)
+{
+return (NULL);
+}
 for (; j < len_s2; ++j, ++i)
 {
 s[i] = s2[j];
 }
-
 s[i] = '\0';
 return (s);
 }
