@@ -16,7 +16,7 @@ char *create_array(unsigned int size, char c)
 	char *str;
 	unsigned int i;
 
-	str = malloc(sizeof*str * size);
+	str = malloc(sizeof(*str) * size);
 	if (size == 0 || str == NULL)
 		return (NULL);
 
@@ -28,24 +28,21 @@ char *create_array(unsigned int size, char c)
 /**
  * _calloc - create array of size size and assign char c
  * @size: size of array
- * @nmeb:array element
+ * @nmemb:array element
  * Return: returns NULL if If malloc fails.
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
- 
+
 {
-	char *array;
-	unsigned int i;
+char *array;
+unsigned int i;
 
-     if(nmemb == 0 || size == 0)
-     return (NULL);
-     array = calloc(sizeof*array, size);
-    if (size == 0 || array == NULL)
-    return (NULL);
-    for (i = 0; i < size; i++)
-    array[i] = nmemb;
-     return (array);
+if (nmemb == 0 || size == 0)
+return (NULL);
+array = calloc(sizeof(*array), size);
+if (size == 0 || array == NULL)
+return (NULL);
+for (i = 0; i < size; i++)
+array[i] = nmemb;
+return (array);
 }
-
-	
-	
