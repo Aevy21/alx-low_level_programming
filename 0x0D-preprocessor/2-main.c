@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 #define  PRINT_FILENAME\
-       	printf("%s\n", __FILE__)
+printf("%s\n", __FILE__)
+
 /**
  *main - Entry point of the program
  *
