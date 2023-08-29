@@ -8,32 +8,19 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head;
-	size_t node_count = 0;
-	listint_t *reversed_head;
-
-	while (current != NULL) 
+	if (head)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		node_count++;
-		current = current->next;
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (head->next < head)
+		{
+			return (1 + print_listint_safe(head->next));
+		}
+		else
+		{
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			return (1);
+		}
+
 	}
-
-	current = head;
-
-	reversed_head = reverse_listint(listint_t *head);
-	current = reversed_head;
-
-	while (current != NULL) 
-	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		current = current->next;
-	}
-
-	if (head <= reversed_head) 
-	{
-		exit(98);
-	}
-
-	return (node_count);
+	return (0);
 }
