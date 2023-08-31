@@ -9,13 +9,13 @@ int get_endianness(void)
 
 	unsigned int checker;
 	char *byte = (char *)&checker;
-	
+
 	if (*byte == 1)
 	{
-		return (1);
+		return (0);
 	}
 	else
 	{
-		return (0);
+		return (1);
 	}
 }
