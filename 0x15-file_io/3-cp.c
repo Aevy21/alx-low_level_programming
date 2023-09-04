@@ -29,39 +29,41 @@ int main(int argc, char *argv[])
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		error_exit(98, "Can't read from file_from");
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+		error_exit(98, "");
 	}
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		error_exit(99, "Can't write to file_to");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		error_exit(99, "");
 	}
 
-	while (1)
+	while ((bytes_read = read(fd_from, buffer, sizeof(buffer))) > 0)
 	{
-		bytes_read = read(fd_from, buffer, sizeof(buffer));
-		if (bytes_read == -1)
-		{
-			error_exit(98, "Can't read from file_from");
-		}
-		if (bytes_read == 0)
-		{
-			break;
-		}
 		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written != bytes_read || bytes_written == -1)
+		if (bytes_written == -1 || bytes_written != bytes_read)
 		{
-			error_exit(99, "Can't write to file_to");
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			error_exit(99, "");
 		}
 	}
+
+	if (bytes_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+		error_exit(98, "");
+	}
+
 	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
-		error_exit(100, "Can't close fd_from");
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+		error_exit(100, "");				}
 
 	return (0);
 }
+
 /**
  * error_exit - Print an error message and exit with a specific code.
  * @code: The exit code to be used.
@@ -74,3 +76,4 @@ void error_exit(int code, const char *message)
 	dprintf(STDERR_FILENO, "Error: %s\n", message);
 	exit(code);
 }
+
