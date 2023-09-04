@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		error_exit(98, "Can't read from file_from");
 	}
 
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0660);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		error_exit(99, "Can't write to file_to");
@@ -58,11 +58,6 @@ int main(int argc, char *argv[])
 	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
 		error_exit(100, "Can't close fd_from");
-	}
-
-	if (close(fd_to) == -1)
-	{
-		error_exit(100, "Can't close fd_to");
 	}
 
 	return (0);
