@@ -50,13 +50,12 @@ int main(int argc, char *argv[])
 			break;
 		}
 		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written == -1)
+		if (bytes_written != bytes_read || bytes_written == -1)
 		{
 			error_exit(99, "Can't write to file_to");
 		}
 	}
-
-	if (close(fd_from) == -1)
+	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
 		error_exit(100, "Can't close fd_from");
 	}
