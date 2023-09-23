@@ -79,7 +79,7 @@ char *allocate_custom_buffer(char *custom_file)
 	{
 		/* Print error message and exit with code 99 for memory allocation failure. */
 		dprintf(STDERR_FILENO,
-				"Error: Can't allocate memory for %s\n", file);
+				"Error: Can't allocate memory for %s\n", custom_file);
 		exit(99);
 	}
 
@@ -98,8 +98,7 @@ void close_custom_file(int custom_fd)
 
 	if (custom_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", custom_fd);		exit(100);
 	}
 }
 
