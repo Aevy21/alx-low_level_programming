@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+char *allocate_custom_buffer(char *custom_file);
+void close_custom_file(int custom_fd);
 
 /**
  * main - Entry point for the custom file copying program.
