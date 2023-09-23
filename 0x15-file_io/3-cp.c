@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		/* Print usage message and exit with code 97 for incorrect argument count. */
-		dprintf(STDERR_FILENO, "Usage: cp custom_file_from custom_file_to\n");
-		exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");		exit(97);
 	}
 
 	custom_buffer = allocate_custom_buffer(argv[2]);
@@ -37,7 +36,7 @@ int main(int argc, char *argv[])
 		{
 			/* Print error message and exit with code 98 for read error. */
 			dprintf(STDERR_FILENO,
-					"Error: Can't read from custom file %s\n", argv[1]);
+					"Error: Can't read from file %s\n", argv[1]);
 			free(custom_buffer);
 			exit(98);
 		}
@@ -80,7 +79,7 @@ char *allocate_custom_buffer(char *custom_file)
 	{
 		/* Print error message and exit with code 99 for memory allocation failure. */
 		dprintf(STDERR_FILENO,
-				"Error: Can't allocate memory for %s\n", custom_file);
+				"Error: Can't allocate memory for %s\n", file);
 		exit(99);
 	}
 
@@ -99,7 +98,7 @@ void close_custom_file(int custom_fd)
 
 	if (custom_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close custom fd %d\n", custom_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
