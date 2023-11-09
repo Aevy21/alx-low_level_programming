@@ -15,11 +15,11 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	while (current != NULL)
 	{
 		if (count == index)
-			return current;
+			return (current);
 		count++;
 		current = current->next;
 	}
 
-	return NULL; /* Node with the specified index doesn't exist*/
+	return (NULL); /* Node with the specified index doesn't exist*/
 }
 
