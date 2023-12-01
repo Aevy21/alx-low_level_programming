@@ -28,13 +28,14 @@ void hash_table_delete(hash_table_t *ht)
  */
 void free_list(hash_node_t *head)
 {
-    while (head != NULL)
-    {
-        hash_node_t *temp = head;
-        head = head->next;
-        free(temp->key);
-        free(temp->value);
-        free(temp);
-    }
+	while (head != NULL)
+	{
+		hash_node_t *temp = head;
+
+		head = head->next;
+		free(temp->key);
+		free(temp->value);
+		free(temp);
+	}
 }
 
