@@ -1,8 +1,10 @@
 CC = gcc
-SRC = main.c
+SRC = main.c school.c
 
 all: school
 
-school: $(SRC)
-	$(CC) -o school $(SRC)
+school: $(SRC:.c=.o)
+	$(CC) $^ -o school
 
+%.o: %.c
+	$(CC) -c $< -o $@
