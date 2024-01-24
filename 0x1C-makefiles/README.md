@@ -1,4 +1,4 @@
-ntroduction to Makefiles
+# 0x1C. C - Makefiles
 
 ## What are Makefiles?
 Makefiles are scripts that guide the build process of a software project. They define how source code files should be compiled, linked, and managed to create executable programs or libraries. The `make` utility reads these instructions and automates the build process.
